@@ -5,12 +5,55 @@ CREATE DATABASE traningsdagbok;
 USE traningsdagbok;
 
 3. Skapa tabeller
+CREATE TABLE workouts (
+    workout_id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    workout_date DATE NOT NULL,
+    workout_name VARCHAR(200) NOT NULL,
+    workout_length_total INTEGER NOT NULL DEFAULT 0,
+    workout_comment VARCHAR(200)
+);
+
+CREATE TABLE workoutsessions (
+    workoutsession_id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    workoutsession_time INTEGER NOT NULL,
+    workouttype_id BIGINT,
+    FOREIGN KEY (workouttype_id) REFERENCES workouttypes(workouttype_id),
+    workout_id BIGINT,
+    FOREIGN KEY (workout_id) REFERENCES workouts(workout_id)
+);
+
 CREATE TABLE workouttypes (
     workouttype_id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     workouttype_name VARCHAR(200) NOT NULL
 );
 
 4. Insätt data i tabeller med SQL queries
+INSERT INTO workouts (
+  workout_date,
+  workout_name,
+  workout_comment
+)
+VALUES 
+('2025-04-21', 'Torsdagspasset','Min första registrering av handbollträning'),
+('2025-04-22', 'Fredagspasset','Min första registrering av fotbollträning'),
+('2025-04-23', 'Lördagspasset','Min första registrering av ishockeyträning'),
+('2025-04-24', 'Söndagspasset','Min första registrering av pingpongträning'),
+('2025-04-21', 'Måndagspasset','Min första registrering av fridrotträning');
+
+INSERT INTO workoutsessions (
+  workoutsession_time,
+  workouttype_id,
+  workout_id
+)
+VALUES
+('50', '1', '1'),
+('40', '2', '1'),
+('50', '1', '2'),
+('60', '2', '2'),
+('30', '4', '3'),
+('40', '5', '3');
+
+
 INSERT INTO workouttypes (
     workouttype_name
 )
