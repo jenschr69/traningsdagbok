@@ -1,0 +1,23 @@
+1. Skapa database
+CREATE DATABASE traningsdagbok;
+
+2. Välja databas
+USE traningsdagbok;
+
+3. Skapa tabeller
+CREATE TABLE workouttypes (
+    workouttype_id BIGINT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    workouttype_name VARCHAR(200) NOT NULL
+);
+
+4. Insätt data i tabeller med SQL queries
+INSERT INTO workouttypes (
+    workouttype_name
+)
+VALUES
+('Fotboll'),
+('Handboll'),
+('Ishockey'),
+('Löpträning'),
+('Friidrott'),
+('Handboll');
