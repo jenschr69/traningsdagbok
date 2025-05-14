@@ -218,6 +218,12 @@ function addWorkoutType(event){
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Load workouts
+    loadWorkouts();
+
+    // Load workout seessions
+    loadWorkoutSessions();
+
     // Load workouttypes when the page is loaded
     loadWorkouttypes();
 

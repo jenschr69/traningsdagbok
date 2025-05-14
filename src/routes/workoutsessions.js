@@ -3,7 +3,7 @@ import { Router } from 'express';
 
 const router = Router(); 
 
-router.get('/workoutsessions', async(req, res) => {
+router.get('/', async(req, res) => {
     try {
         const sql = 'SELECT * FROM workoutsessions';
         const [ rows ] = await pool.query(sql);
@@ -14,7 +14,7 @@ router.get('/workoutsessions', async(req, res) => {
     }
 });
 
-router.post('/workoutsessions', async (req, res) => {
+router.post('/', async (req, res) => {
     try {
         const { workouttype_id, workoutsession_length } = req.body;
         const sql = 'INSERT INTO workoutession (workout_date, workout_name, workout_length, workout_comment) VALUES (?, ?, ?, ?)';

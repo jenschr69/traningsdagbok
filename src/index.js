@@ -4,7 +4,7 @@ import cors from 'cors';
 import express from 'express';
 import workoutsRouter from './routes/workouts.js';
 import workouttypesRouter from './routes/workouttypes.js';
-// import workoutsSessionsRouter from './routes/workoutsessions.js';
+import workoutsessionsRouter from './routes/workoutsessions.js';
 
 const app = express(); 
 const PORT = process.env.PORT || 3000; 
@@ -23,10 +23,10 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // Add the workouts routes
-app.use('/', workoutsRouter);
+app.use('/workouts', workoutsRouter);
 
 // Add the workouts sessions routes
-// app.use('/', workoutsSessionsRouter);
+app.use('/workoutsessions', workoutsessionsRouter);
 
 // Add the Workouttypes routes
 app.use('/workouttypes', workouttypesRouter);
