@@ -98,6 +98,8 @@ function addWorkout(event){
         })  
 }
 
+
+
 function loadWorkoutSessions() {
     fetch("http://localhost:3000/workoutsessions/")
         .then(response => response.json())
@@ -122,13 +124,32 @@ function loadWorkoutSessions() {
                 td.textContent = workoutsession.workout_id; 
                 tr.appendChild(td);
 
+                // td = document.createElement("td");
+                // td.textContent = 'Redigera';
+                // tr.appendChild(td);
+
+                // td = document.createElement("td");
+                // td.textContent = 'Ta bort';
+                // tr.appendChild(td);
+
+                // Update
                 td = document.createElement("td");
-                td.textContent = 'Redigera';
+                a = document.createElement("a");
+                linkText = document.createTextNode("Redigera");
+                a.appendChild(linkText);
+                a.setAttribute("href", "/workoutsession/" + workoutsession.workoutsession_id);
+                td.appendChild(a);
                 tr.appendChild(td);
 
+                // Delete
                 td = document.createElement("td");
-                td.textContent = 'Ta bort';
+                a = document.createElement("a");
+                linkText = document.createTextNode("Ta bort");
+                a.appendChild(linkText);
+                a.setAttribute("href", "/workoutsession/" + workoutsession.workoutsession_id);
+                td.appendChild(a);
                 tr.appendChild(td);
+
 
                 // Add the tr to the tbody
                 workoutSessionsList.appendChild(tr);
@@ -176,14 +197,32 @@ function loadWorkouttypes() {
             data.forEach(workouttype => {
                 const tr = document.createElement("tr");
 
-                // Create first cell
-                let td = document.createElement("td");
-                td.textContent = workouttype.workouttype_id;
-                tr.appendChild(td);
+                // Create first cell - hidden
+                // let td = document.createElement("td");
+                // td.textContent = workouttype.workouttype_id;
+                // tr.appendChild(td);
                 
                 // Create second cell
                 td = document.createElement("td");
                 td.textContent = workouttype.workouttype_name;
+                tr.appendChild(td);
+
+                // Update
+                td = document.createElement("td");
+                a = document.createElement("a");
+                linkText = document.createTextNode("Redigera");
+                a.appendChild(linkText);
+                a.setAttribute("href", "/workouttype/" + workouttype.workout_id);
+                td.appendChild(a);
+                tr.appendChild(td);
+
+                // Delete
+                td = document.createElement("td");
+                a = document.createElement("a");
+                linkText = document.createTextNode("Ta bort");
+                a.appendChild(linkText);
+                a.setAttribute("href", "/workouttype/" + workouttype.workout_id);
+                td.appendChild(a);
                 tr.appendChild(td);
                 
                 // Add the tr to the tbody
@@ -220,6 +259,10 @@ function addWorkoutType(event){
 document.addEventListener("DOMContentLoaded", () => {
     // Load workouts
     loadWorkouts();
+
+    // Add an event handler to the Add Workout button
+    const addWorkoutBtn = document.getElementById("addWorkout");
+    addWorkoutBtn.addEventListener("click", addWorkout);
 
     // Load workout seessions
     loadWorkoutSessions();
