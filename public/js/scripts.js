@@ -170,12 +170,11 @@ function addWorkoutSession(event){
         return; 
     }
 
-    fetch("http://localhost:3000/workoutessions", {
+    fetch("http://localhost:3000/workoutsessions", {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
         },
-        // Should workout_total_length be added here?
         body: JSON.stringify({ workoutsession_time, workouttype_id, workout_id })
     })
         .then(response => response.json())
@@ -266,6 +265,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Load workout seessions
     loadWorkoutSessions();
+
+    // Add an event handler to the Add Workout Session button
+    const addWorkoutSessionBtn = document.getElementById("addWorkoutSession");
+    addWorkoutSessionBtn.addEventListener("click", addWorkoutSession);
 
     // Load workouttypes when the page is loaded
     loadWorkouttypes();
