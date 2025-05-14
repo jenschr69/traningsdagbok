@@ -15,6 +15,76 @@
   </header>
 
   <main class="container">
+      <h2>Mina träningspass</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <!-- TODO: Hide Träningspass id -->
+        <th scope="col">Träningspass id</th>
+        <th scope="col">Träningspass datumn</th>
+        <th scope="col">Träningspass namn</th>
+        <th scope="col">Total träningstid (min.)</th>
+        <th scope="col">Kommentar</th>
+      </tr>
+    </thead>
+
+    <tbody id="workoutsList">
+
+    </tbody>    
+  </table> 
+
+  <section class="form-border">
+    <h2>Nytt träningspass (workout)</h2>
+    <form>
+      <label for="workout_date">Träningsdatum:</label>
+      <input type="date" id="workout_date" class="form-control mb-2" required>
+      
+      <label for="workout_name">Träningspass namn:</label>
+      <input type="text" id="workout_name" class="form-control mb-2" required>
+  
+      <label for="workout_comment">Kommentar:</label>
+      <input type="text" id="workout_comment" class="form-control mb-2">
+  
+      <input type="button" id="addWorkout" value="Lägg till träningspass" class="btn btn-primary">
+    </form>
+    </section>  
+
+    <hr>
+
+    
+    <h2>Mina träningsaktiviteter</h2>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Träningstid </th>
+          <th scope="col">Träningsaktivitet</th>
+          <th scope="col">Träningspass</th>
+        </tr>
+      </thead>
+      <tbody id="workoutSessionsList">
+  
+      </tbody>
+    </table>
+
+    <section class="form-border">
+      <h2>Registrera ny träningsaktivitet</h2>
+      <form>   
+        <!-- Setting max workout length to 12 hours -->
+        <label for="workout_session_time">Träningstid (minuter):</label>
+        <input type="number" id="workout_session_time" min="1" max="720" class="form-control mb-2" required> 
+
+        <label for="workout_type_id">Träningstyp:</label>
+        <input type="text" id="workout_type_id" class="form-control mb-2" required>
+        <!-- Get workouttypes for the table workout-types. Only select and register one workouttype at the time. -->
+    
+        <label for="workout_id">Träningspass:</label>
+        <input type="text" id="workout_id" class="form-control mb-2" required>
+
+        <input type="button" id="addWorkoutSession" value="Lägg till träningssession" class="btn btn-primary">
+      </form>
+    </section>
+
+    <hr>
   
     <table class="table">
       <thead>

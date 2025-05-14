@@ -1,0 +1,71 @@
+body {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Header styling */
+header, footer {
+  background-color: black;
+  p {
+    color: white;
+  }
+  margin-bottom: 0.5rem;
+}
+
+/* Navigation styling */
+nav {
+  background-color: darkgrey;
+  li > a {
+    color: white;
+  }
+  li {
+    flex: inline-flex;
+  }
+}
+
+h1 {
+color: white;
+}
+
+ul > li {
+  list-style-type: none;
+}
+
+.form-border {
+  border: 2px solid;
+  border-color: lightgray;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.nav-link {
+  color: white;
+}
+
+/* Footer styling */
+footer > nav-item {
+  color: white;
+}
+
+footer {
+/* unvisited link */
+a:link {
+  color: white;
+}
+
+/* visited link */
+a:visited {
+  color: white;
+}
+
+/* mouse over link */
+a:hover {
+  color: lightgrey;
+}
+
+/* selected link */
+a:active {
+  color: white;
+} 
+}
+
