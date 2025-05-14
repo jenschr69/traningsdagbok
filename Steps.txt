@@ -20,3 +20,13 @@ Steps for creating a project
 -- Vilken användare skall vi använda för at ansluta till databasen DB_USER=root - KLART
 -- Lösenord - DB_PASSWORD=rootpassword - KLART
 -- Databasnamn - DB_NAME=workoutjournal - KLART
+
+
+Node.js User login in with user roles?
+
+Public url: https://traningsdagbok.glodexa.se 
+Describe setup for Node.js via cPanel on Oderland webhost
+
+Inspiration
+WDS JWS - User identification tutorial - https://www.youtube.com/watch?v=mbsmsi7l3r4
+WDS - User authentication - https://www.youtube.com/watch?v=Ud5xKCYQTjM
