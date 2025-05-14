@@ -1,0 +1,25 @@
+{
+  "name": "traningsdagbok",
+  "version": "1.0.0",
+  "description": "Inlämningsuppgift FE24 BackendDatabaskursen Grit Academy",
+  "keywords": [
+    "node.js",
+    "express",
+    "mysql"
+  ],
+  "homepage": "https://github.com/jenschr69/traningsdagbok#readme",
+  "bugs": {
+    "url": "https://github.com/jenschr69/traningsdagbok/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenschr69/traningsdagbok.git"
+  },
+  "license": "ISC",
+  "author": "Jens Christensen - jenschr69",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
