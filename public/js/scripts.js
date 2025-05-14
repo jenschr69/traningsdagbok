@@ -98,8 +98,6 @@ function addWorkout(event){
         })  
 }
 
-
-
 function loadWorkoutSessions() {
     fetch("http://localhost:3000/workoutsessions/")
         .then(response => response.json())
@@ -182,7 +180,7 @@ function addWorkoutSession(event){
             loadWorkoutSessions();        // Reload workouts after adding a new one
             document.getElementById("workoutsession_time").value = "";
             document.getElementById("workouttype_id").value = "";
-            document.getElementById("workouttype_id").value = "";
+            document.getElementById("workout_id").value = "";
         })  
 }
 
