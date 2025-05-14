@@ -2,7 +2,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 import cors from 'cors';
 import express from 'express';
+import workoutsRouter from './routes/workouts.js';
 import workouttypesRouter from './routes/workouttypes.js';
+// import workoutsSessionsRouter from './routes/workoutsessions.js';
 
 const app = express(); 
 const PORT = process.env.PORT || 3000; 
@@ -20,7 +22,13 @@ app.use(cors({
 app.use(express.json());
 app.use(express.static('public'));
 
-// Add the users routes
+// Add the workouts routes
+app.use('/', workoutsRouter);
+
+// Add the workouts sessions routes
+// app.use('/', workoutsSessionsRouter);
+
+// Add the Workouttypes routes
 app.use('/workouttypes', workouttypesRouter);
 
 app.listen(PORT, () => {
