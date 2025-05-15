@@ -9,7 +9,8 @@ Steps for creating a project
 7. Installera Env - "npm install dotenv" - KLART
 8. Installera Databaskoppling - "npm install mysql2" - KLART
 9. Installera CORS - "npm install cors" - KLART
-9.a Installera Nodemon som dev dependency med "npm install nodemon --save-dev" - KLART
+9.a Installera alla paket med "npm install express dotenv mysql2 cors"
+9.b Installera Nodemon som dev dependency med "npm install nodemon --save-dev" - KLART
 10. Under scripts i package.json - "dev": "nodemon src/index.js" - KLART
 + "type": "module", efter main.js (gamla sättet common.js) - KLART
 11. Skapa index.js i rooten på src mappen - KLART
@@ -20,6 +21,14 @@ Steps for creating a project
 -- Vilken användare skall vi använda för at ansluta till databasen DB_USER=root - KLART
 -- Lösenord - DB_PASSWORD=rootpassword - KLART
 -- Databasnamn - DB_NAME=workoutjournal - KLART
+
+
+
+For att köra projektet:
+1. Importera databas
+2. Installera npm paket med "npm install express dotenv mysql2 cors"
+3. Installera nodemon "npm install nodemon --save-dev"
+4. Kör app'en med "npm run dev"
 
 
 Node.js User login in with user roles?
