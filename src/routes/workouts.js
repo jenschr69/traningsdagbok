@@ -33,4 +33,24 @@ router.post('/', async (req, res) => {
 
 });
 
+router.delete('/', async (req, res) => {
+    try {
+        // This one does not work
+        const { workout_date, workout_name, workout_comment } = req.body;
+        const sql = 'DELETE workout:ID';
+        const [ result ] = await pool.query(
+            sql, 
+            [ workout_date, workout_name, workout_comment ]
+        );
+    
+        res.status(201).json({
+            message: 'Workout deleted'
+        });
+    } catch(err) {
+        console.log(err);
+        res.status(500).json({ message: 'Database error'});
+    }
+
+});
+
 export default router;
