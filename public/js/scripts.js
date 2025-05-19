@@ -98,6 +98,32 @@ function addWorkout(event){
         })  
 }
 
+function deleteWorkout(event){
+    event.preventDefault();
+    const workout_id = document.getElementById("workout_date").value;
+
+    if(!workout_id ){
+        alert("Workout was not found!");
+        return; 
+    }
+
+    fetch("http://localhost:3000/workouts", {
+        method: "DELETE",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ workout_date, workout_name, workout_comment })
+    })
+        .then(response => response.json())
+        .then(data => {
+            loadWorkouts();        // Reload workouts after adding a new one
+            document.getElementById("workout_date").value = "";
+            document.getElementById("workout_name").value = "";
+            document.getElementById("workout_comment").value = "";
+        })  
+}
+
+
 function loadWorkoutSessions() {
     fetch("http://localhost:3000/workoutsessions/")
         .then(response => response.json())

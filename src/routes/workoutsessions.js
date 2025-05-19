@@ -16,15 +16,15 @@ router.get('/', async(req, res) => {
 
 router.post('/', async (req, res) => {
     try {
-        const { workouttype_id, workoutsession_length } = req.body;
-        const sql = 'INSERT INTO workoutession (workout_date, workout_name, workout_length, workout_comment) VALUES (?, ?, ?, ?)';
+        const { workoutsession_time, workouttype_id, workout_id  } = req.body;
+        const sql = 'INSERT INTO workoutsessions (workoutsession_time, workouttype_id, workout_id ) VALUES (?, ?, ?)';
         const [ result ] = await pool.query(
             sql, 
-            [ workout_date, workout_name, workout_length, workout_comment ]
+            [ workoutsession_time, workouttype_id, workout_id ]
         );
     
         res.status(201).json({
-            message: 'Workout created'
+            message: 'Workoutsession created'
         });
     } catch(err) {
         console.log(err);
