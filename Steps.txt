@@ -4,15 +4,15 @@ Steps for creating a project
 2. Skapa mappar - src (backend), public (frontend) - KLART
 3. Skapa undermapper till public - css, js - KLART
 4. Skapa undermapper till src - helpers, middleware, routes - KLART
-5. Skapa databas- traningsdagbok - KLART
-6. Installera Express - "npm install express" - KLART
-7. Installera Env - "npm install dotenv" - KLART
-8. Installera Databaskoppling - "npm install mysql2" - KLART
-9. Installera CORS - "npm install cors" - KLART
+5. Skapa databas- workoutjournaldb - KLART
+6. Installera Express - "npm install express" - 
+7. Installera Env - "npm install dotenv" - 
+8. Installera Databaskoppling - "npm install mysql2" - 
+9. Installera CORS - "npm install cors" -
 9.a Installera alla paket med "npm install express dotenv mysql2 cors"
-9.b Installera Nodemon som dev dependency med "npm install nodemon --save-dev" - KLART
-10. Under scripts i package.json - "dev": "nodemon src/index.js" - KLART
-+ "type": "module", efter main.js (gamla sättet common.js) - KLART
+9.b Installera Nodemon som dev dependency med "npm install nodemon --save-dev" 
+10. Under scripts i package.json - "dev": "nodemon src/index.js"
++ "type": "module", efter main.js (gamla sättet common.js)
 11. Skapa index.js i rooten på src mappen - KLART
 12. Läsa in miljövariabel filen med "import dotenv from 'dotenv'; dotenv.config(); från src/index.js" i 
     /src/helpers/database.js - KLART
